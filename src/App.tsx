@@ -4,9 +4,14 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
 import { amountAdded, increment } from "./features/counter/counterSlice";
-import { useFetchBreedsQuery } from "./features/dogs/dogs-api-slice";
+// import { useFetchBreedsQuery } from "./features/dogs/dogs-api-slice";
 import DragnDrop from "./components/drag-n-drop";
 import TaskForm from "./components/drag-n-drop/taskForm";
+import DateTimePicker from "./components/DateTimePicker";
+import DynamicForm from "./components/dynamic-form";
+import SimpleForm from "./components/simple-form";
+import WeekView from "./components/scheduler/WeekView";
+import Plan from "./components/plan";
 
 function App() {
   const count = useAppSelector((state) => state.counter.value);
@@ -18,7 +23,7 @@ function App() {
     dispatch(increment());
   };
 
-  const { data = [], isFetching } = useFetchBreedsQuery(numDogs);
+  // const { data = [], isFetching } = useFetchBreedsQuery(numDogs);
 
   return (
     <div>
@@ -65,8 +70,13 @@ function App() {
         </table>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p> */}
-      <DragnDrop />
-      <TaskForm />
+      {/* <DragnDrop />
+      <TaskForm /> */}
+      {/* <DateTimePicker /> */}
+      {/* <DynamicForm /> */}
+      {/* <SimpleForm /> */}
+      {/* <WeekView /> */}
+      <Plan />
     </div>
   );
 }
